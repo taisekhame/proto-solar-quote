@@ -1,6 +1,6 @@
 import type { ValidationIssue } from "@/lib/types";
 
-/** Plain-text validation messages (errors in red-on-white, warnings in yellow). */
+/** Plain-text validation messages (errors in dark brown, warnings in amber). */
 export default function Issues({ issues }: { issues: ValidationIssue[] }) {
   if (issues.length === 0) return null;
   return (
@@ -9,7 +9,7 @@ export default function Issues({ issues }: { issues: ValidationIssue[] }) {
         <li
           key={i}
           className={`rounded-2xl px-4 py-2 text-sm font-bold ${
-            issue.level === "error" ? "bg-white text-red-700" : "bg-sun text-black"
+            issue.level === "error" ? "bg-ink text-cream" : "bg-accent text-ink"
           }`}
         >
           {issue.level === "error" ? "⛔ " : "⚠️ "}

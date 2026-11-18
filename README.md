@@ -19,7 +19,7 @@ npm run build      # production build
 
 ```
 app/
-  layout.tsx, globals.css   Theme (electric blue / sun yellow / grape purple), print styles
+  layout.tsx, globals.css   Theme (cream / dark brown / amber), print styles
   page.tsx                  Page 1 — landing (one screen)
   quote/page.tsx            Page 2 — quotation system; holds all state, derives results live
 components/

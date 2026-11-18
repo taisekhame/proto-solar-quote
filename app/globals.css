@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --electric: #0a2ee6;
-  --sun: #ffc400;
-  --grape: #2b0a4e;
+  --cream: #fff6e5;
+  --paper: #fffdf7;
+  --ink: #2b1a10;
+  --accent: #ff9e1b;
+  --accent-deep: #f08c00;
 }
 
 html,
 body {
-  background: var(--electric);
-  color: #fff;
+  background: var(--cream);
+  color: var(--ink);
   font-family: ui-rounded, "Nunito", "Segoe UI", system-ui, sans-serif;
 }
 
@@ -26,36 +28,44 @@ input[type="number"] {
 }
 
 @layer components {
-  .btn-sun {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sun px-6 py-3 font-extrabold text-black shadow-soft transition hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50;
+  /* Primary button: amber with dark brown text, deeper amber on hover */
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 font-extrabold text-ink shadow-soft transition hover:-translate-y-0.5 hover:bg-accent-deep active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:bg-accent;
   }
+  /* Outline button for cream surfaces */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 px-5 py-2.5 font-bold text-white transition hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink/30 px-5 py-2.5 font-bold text-ink transition hover:bg-ink/10 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  /* Outline button for dark brown surfaces (bottom bar) */
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-cream/40 px-5 py-2.5 font-bold text-cream transition hover:bg-cream/10 disabled:cursor-not-allowed disabled:opacity-40;
   }
   .card {
-    @apply rounded-3xl bg-grape p-5 shadow-soft;
+    @apply rounded-3xl border border-ink/15 bg-paper p-5 text-ink shadow-soft;
   }
   .field {
-    @apply w-full rounded-xl border-2 border-white/15 bg-white px-3 py-2 font-semibold text-black outline-none transition placeholder:text-black/40 focus:border-sun focus:ring-2 focus:ring-sun/60;
+    @apply w-full rounded-xl border-2 border-ink/20 bg-white px-3 py-2 font-semibold text-ink outline-none transition placeholder:text-ink/40 focus:border-accent focus:ring-2 focus:ring-accent/60;
   }
   .label {
-    @apply mb-1 block text-xs font-bold uppercase tracking-wide text-white/70;
+    @apply mb-1 block text-xs font-bold uppercase tracking-wide text-ink/70;
   }
 }
 
-/* ---- Print: only the quotation preview, on white paper ---- */
+/* ---- Print: only the quotation preview, on white paper, dark brown text, one amber rule ---- */
 @media print {
   html,
   body {
     background: #fff !important;
-    color: #000 !important;
+    color: var(--ink) !important;
   }
   .no-print {
     display: none !important;
   }
   #quotation-preview {
     box-shadow: none !important;
+    border: 0 !important;
     border-radius: 0 !important;
     margin: 0 !important;
+    background: #fff !important;
   }
 }

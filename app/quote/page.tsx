@@ -51,7 +51,7 @@ export default function QuotePage() {
     <main className="mx-auto flex min-h-dvh w-full max-w-5xl flex-col gap-5 px-4 py-5 sm:px-6">
       <header className="no-print flex items-center justify-between">
         <Link href="/" className="text-lg font-black">☀️ SunSizer</Link>
-        <span className="rounded-full bg-grape px-3 py-1 text-xs font-extrabold text-sun">Prototype</span>
+        <span className="rounded-full bg-ink px-3 py-1 text-xs font-extrabold text-cream">Prototype</span>
       </header>
 
       <Stepper current={step} maxReachable={maxReachable} onSelect={goTo} />
@@ -88,19 +88,19 @@ export default function QuotePage() {
         )}
       </div>
 
-      <footer className="no-print flex items-center justify-between gap-3 rounded-3xl bg-grape p-3 shadow-soft">
-        <button type="button" className="btn-ghost" disabled={step === 0} onClick={() => goTo(step - 1)}>
+      <footer className="no-print flex items-center justify-between gap-3 rounded-3xl bg-ink p-3 text-cream shadow-soft">
+        <button type="button" className="btn-ghost-dark" disabled={step === 0} onClick={() => goTo(step - 1)}>
           ← Back
         </button>
-        <span className="hidden text-sm font-bold text-white/70 sm:block">
+        <span className="hidden text-sm font-bold text-cream/70 sm:block">
           Step {step + 1} of {STEP_LABELS.length}: {STEP_LABELS[step]}
         </span>
         {step < STEP_LABELS.length - 1 ? (
-          <button type="button" className="btn-sun" disabled={blocked} onClick={() => goTo(step + 1)}>
+          <button type="button" className="btn-accent" disabled={blocked} onClick={() => goTo(step + 1)}>
             Next →
           </button>
         ) : (
-          <button type="button" className="btn-ghost" onClick={() => goTo(0)}>
+          <button type="button" className="btn-ghost-dark" onClick={() => goTo(0)}>
             Back to Step 1 ↺
           </button>
         )}

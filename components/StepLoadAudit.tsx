@@ -41,7 +41,7 @@ export default function StepLoadAudit({ customer, setCustomer, appliances, setAp
     <div className="space-y-5">
       {/* Customer details (optional) */}
       <section className="card">
-        <h2 className="mb-3 text-xl font-black">Customer details <span className="text-sm font-semibold text-white/60">(optional)</span></h2>
+        <h2 className="mb-3 text-xl font-black">Customer details <span className="text-sm font-semibold text-ink/60">(optional)</span></h2>
         <div className="grid gap-3 sm:grid-cols-3">
           <div>
             <label className="label" htmlFor="c-name">Name</label>
@@ -62,7 +62,7 @@ export default function StepLoadAudit({ customer, setCustomer, appliances, setAp
       <section className="card">
         <h2 className="mb-3 text-xl font-black">Appliances</h2>
 
-        <div className="hidden grid-cols-[1.6fr_0.6fr_0.8fr_0.8fr_auto] gap-2 px-1 pb-1 text-xs font-bold uppercase tracking-wide text-white/70 md:grid">
+        <div className="hidden grid-cols-[1.6fr_0.6fr_0.8fr_0.8fr_auto] gap-2 px-1 pb-1 text-xs font-bold uppercase tracking-wide text-ink/70 md:grid">
           <span>Appliance</span>
           <span>Qty</span>
           <span>Watts (each)</span>
@@ -74,7 +74,7 @@ export default function StepLoadAudit({ customer, setCustomer, appliances, setAp
           {appliances.map((a, i) => (
             <div
               key={a.id}
-              className="grid grid-cols-3 items-end gap-2 rounded-2xl bg-white/5 p-3 md:grid-cols-[1.6fr_0.6fr_0.8fr_0.8fr_auto] md:bg-transparent md:p-0"
+              className="grid grid-cols-3 items-end gap-2 rounded-2xl bg-ink/5 p-3 md:grid-cols-[1.6fr_0.6fr_0.8fr_0.8fr_auto] md:bg-transparent md:p-0"
             >
               <div className="col-span-3 space-y-2 md:col-span-1">
                 <select
@@ -114,7 +114,7 @@ export default function StepLoadAudit({ customer, setCustomer, appliances, setAp
                 type="button"
                 onClick={() => deleteRow(a.id)}
                 aria-label={`Delete appliance ${i + 1}`}
-                className="h-10 w-10 justify-self-end rounded-full bg-white/10 text-lg font-black transition hover:bg-red-500"
+                className="h-10 w-10 justify-self-end rounded-full bg-ink/10 text-lg font-black transition hover:bg-ink hover:text-cream"
               >
                 ✕
               </button>
@@ -122,7 +122,7 @@ export default function StepLoadAudit({ customer, setCustomer, appliances, setAp
           ))}
         </div>
 
-        <button type="button" onClick={addRow} className="btn-sun mt-4 !py-2">
+        <button type="button" onClick={addRow} className="btn-accent mt-4 !py-2">
           ＋ Add appliance
         </button>
       </section>
@@ -139,8 +139,8 @@ export default function StepLoadAudit({ customer, setCustomer, appliances, setAp
 
 function Total({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-3xl bg-sun p-4 text-black shadow-soft">
-      <p className="text-xs font-extrabold uppercase tracking-wide text-black/70">{label}</p>
+    <div className="rounded-3xl bg-accent p-4 text-ink shadow-soft">
+      <p className="text-xs font-extrabold uppercase tracking-wide text-ink/70">{label}</p>
       <p className="text-2xl font-black sm:text-3xl">{value}</p>
     </div>
   );

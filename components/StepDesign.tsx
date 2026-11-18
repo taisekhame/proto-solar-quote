@@ -93,7 +93,7 @@ export default function StepDesign({ choices, setChoices, assumptions, setAssump
                 value={assumptions[f.key]}
                 onChange={(n) => setAssumptions({ ...assumptions, [f.key]: n })}
               />
-              <span className="mt-0.5 block text-xs text-white/50">{f.hint}</span>
+              <span className="mt-0.5 block text-xs text-ink/50">{f.hint}</span>
             </div>
           ))}
         </div>
@@ -101,7 +101,7 @@ export default function StepDesign({ choices, setChoices, assumptions, setAssump
 
       <section className="card space-y-3">
         <label className="flex cursor-not-allowed items-center gap-3 opacity-70">
-          <input type="checkbox" disabled className="h-5 w-10 cursor-not-allowed accent-yellow-400" aria-label="Professional Mode (disabled)" />
+          <input type="checkbox" disabled className="h-5 w-10 cursor-not-allowed accent-ink" aria-label="Professional Mode (disabled)" />
           <span className="font-extrabold">Professional Mode — coming in full version</span>
         </label>
         <Placeholder>surge checks, PV string validation, cable sizing and breaker/protection selection.</Placeholder>
